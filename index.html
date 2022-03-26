@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/card.min.css">
+  <title>Frontend Mentor | Article preview component</title>
+
+</head>
+<body>
+  <main class="card">
+    <img class="card_img" src="images/drawers.jpg" alt="">
+
+    <div>
+      <div class="card_content">
+        <h1 class="content_title">Shift the overall look and feel by adding these wonderful 
+          touches to furniture in your home</h1>
+          <p class="content_description">
+            Ever been in a room and felt like something was missing? Perhaps 
+            it felt slightly bare and uninviting. I’ve got some simple tips 
+            to help you make any room feel complete.
+          </p>      
+        
+      </div>
+      
+      <div class="card_person">
+        <img class="person_img" src="images/avatar-michelle.jpg" alt="Imagem de uma mulher loira com roupas de frio">
+        <div class="person_info">Michelle Appleton
+           <span class="person_date">28 Jun 2020</span> 
+        </div>
+        
+        <div class="share">
+          <img class="person_share" src="images/icon-share.svg" alt="">
+        </div>        
+      </div>
+  
+      <div class="card_person_social">
+        SHARE
+        <div class="share_icons">
+           <img src="images/icon-facebook.svg" alt="Icone do Facebook">
+           <img src="images/icon-twitter.svg" alt="Icone do Twitter">
+           <img src="images/icon-pinterest.svg" alt="Icone do Pinterest">
+        </div>
+        
+        <div class="share">
+          <img class="person_share" src="images/icon-share.svg" alt="">
+        </div>        
+      </div>
+    </div>
+    
+  
+  </main>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Guilherme S.</a>.
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $('div.share').click( function(){      
+
+      if($('.share').hasClass('opened')){
+        $('.share').removeClass("opened")
+        $('.card_person').css('z-index','3')
+        $('.card_person_social').css('bottom','-5rem')
+      }else{
+        $('.share').addClass("opened")
+        $('.card_person').css('z-index','0')
+        $('.card_person_social').css('bottom','0rem')
+      }
+      
+    })
+
+  </script>
+</body>
+</html>

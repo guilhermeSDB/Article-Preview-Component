@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+// Font
+$Manrope: 'Manrope', sans-serif;
+$defaultFS: 13px;
+
+// Responsive
+$Mobile: 375px;
+$Desktop: 1440px;
+
+@mixin Responsive($width){
+    @media screen and (min-width: $width){
+        @content;
+    }
+}
+
+$PaddingDefault: 2rem 2.3rem;
+
+// Colors
+$white: #F9F9F9;
+$VeryDarkGrayishBlue: hsl(217, 19%, 35%);
+$DesaturatedDarkBlue: hsl(214, 17%, 51%);
+$GrayishBlue: hsl(212, 23%, 69%);
+$LightGrayishBlue: hsl(210, 46%, 95%);
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    font-family: $Manrope;
+}
+
+html {
+    box-sizing: border-box;    
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: $LightGrayishBlue;
+
+    main.card{
+        display: flex;
+        flex-direction: column;
+        width: 25rem;
+        border-radius: 10px;
+        background-color: $white;        
+        overflow: hidden;
+        position: relative;
+
+        @include Responsive($Desktop){
+            flex-direction: row;
+            width: 50rem;
+        }
+
+        img.card_img{
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+
+            @include Responsive($Desktop){                
+                width: 17rem;
+            }
+        }
+
+        div{
+            max-width: 33rem;
+            div.card_content{
+                padding: 0rem 2.3rem;
+                margin-bottom: 6rem;
+    
+                h1.content_title{
+                    color: $DesaturatedDarkBlue;
+                    font-weight: 700;
+                    font-size: 1.5rem;
+                    margin-top: 2.5rem;
+                }
+    
+                p.content_description{
+                    font-weight: 500;
+                    font-size: 1rem;
+                    color: $DesaturatedDarkBlue;
+                    margin: 1rem 0 2rem 0;
+                }
+                
+            }
+    
+            
+            div.card_person{
+                padding: 1rem 2.3rem;
+                transition: .5s;
+                display: flex;
+                justify-content: space-between;
+                background-color: $white;
+                align-items: center;
+                margin-bottom: 0rem;
+                position: absolute;
+                bottom: .5rem;
+                z-index: 2;
+                max-height: 50px;  
+                width: -webkit-fill-available;
+                max-width: inherit;
+                box-sizing: border-box;   
+    
+                img.person_img{
+                    width: 45px;
+                    border-radius: 50%;
+                }
+    
+                div.person_info{
+                    display: flex;
+                    flex-direction: column;
+                    font-weight: 700;
+                    font-size: 1.1rem;
+                    color: $DesaturatedDarkBlue;
+                    position: relative;
+                    left: -1.2rem;
+    
+                    span.person_date{
+                        text-align: left;
+                        margin-top: .3rem;
+                        font-weight: 500;
+                        color: $GrayishBlue;
+                    }
+                }
+    
+                div.share{
+                    background-color: $LightGrayishBlue;
+                    border-radius: 50px;
+                    padding: 0.8rem;
+                    cursor: pointer;
+                    
+                    img.person_share{
+                      
+                    }
+                }
+            }
+    
+            div.card_person_social{
+                padding: 1rem 2.3rem;
+                transition: .5s;
+                background-color: $VeryDarkGrayishBlue;
+                color: #ecf2f8;
+                font-weight: 500;
+                letter-spacing: 6px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 0rem;
+                position: absolute;
+                bottom: 1rem;
+                z-index: 1;
+                max-height: 50px;
+                bottom: -5rem;
+                width: -webkit-fill-available;
+                max-width: inherit;
+                box-sizing: border-box;   
+    
+                div.share_icons{                    
+                    display: flex;
+                    justify-content: space-between;
+                    font-weight: 700;
+                    font-size: 1.1rem;
+                    color: $DesaturatedDarkBlue;
+                    position: relative;
+    
+                    img{
+                        margin: 0 .7rem;
+                    }
+                }
+    
+                div.share{
+                    background-color: $DesaturatedDarkBlue;
+                    border-radius: 50px;
+                    padding: 0.8rem;
+                    cursor: pointer;
+                    
+                    img.person_share{
+                      color: white;
+                      background-color: $white;
+                    }
+                }
+            }
+        }
+
+    }
+
+    div.attribution{
+        position: absolute;
+        bottom: 1rem;
+    }
+
+
+}
