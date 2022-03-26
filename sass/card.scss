@@ -49,6 +49,7 @@ body{
         background-color: $white;        
         overflow: hidden;
         position: relative;
+        top: -2rem;
 
         @include Responsive($Desktop){
             flex-direction: row;

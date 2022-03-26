@@ -26,6 +26,7 @@ body main.card {
   background-color: #F9F9F9;
   overflow: hidden;
   position: relative;
+  top: -2rem;
 }
 @media screen and (min-width: 1440px) {
   body main.card {
